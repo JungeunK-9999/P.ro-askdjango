@@ -2,7 +2,7 @@ from django.urls import re_path, path
 from . import view
 
 urlpatterns=[
-    re_path(r'^sum/(?P<numbers>[\d/]+\d+)/$', views.mysum)
-
+    re_path(r'^sum/(?P<numbers>[\d/]+\d+)/$', views.mysum),
+    re_path(r'^hello/(?P<name>[ㄱ-힣]+)/(?P<age>\d+)/$', views.hello),
 
 ]
