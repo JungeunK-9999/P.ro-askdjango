@@ -1,6 +1,7 @@
-val="01012345678"
+val="01012345678a"
 
-pattern="01[016789][1-9]\\d{6,7}"
+pattern="^01[016789][1-9]\\d{6,7}$"
+import views
 
 """
 010
@@ -13,7 +14,9 @@ pattern="01[016789][1-9]\\d{6,7}"
 
 import re
 
-if re.match(pattern,val):
-    print("matched")
-else:
-    print("invalid")
+def validate_phone_number(number):
+    if not re.match(pattern,number):
+        return False
+    return True
+
+print(validate_phone_number('0101878'))
