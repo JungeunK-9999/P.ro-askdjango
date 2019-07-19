@@ -3,13 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,
-    minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
 
     <title>Title</title>
 </head>
 <body>
 <h1>AskDjango</h1>
 <p>안녕하세요</p>
+
+<form action="" method="get">
+    <input type="text" name="q" value="{{ q }}"/>
+    <input type="submit" value="검색" />
+</form>
+
+<ul>??
+    {% for post in post_list %}
+        <li>
+            {{ post.id }}
+            {{ post.title }}
+        </li>
+    {% endfor %}
+</ul>
+
 <ul>
     <li>
         dkdkkd
