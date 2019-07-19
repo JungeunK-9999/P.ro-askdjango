@@ -3,7 +3,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from blog.models import Post
+from blog.models import Post, Comment
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -31,3 +31,7 @@ class PostAdmin(admin.ModelAdmin):
     make_published.short_description = '  지정 포스팅을 Published상태로 변경합니다.'
 
 # admin.site.register(Post, PostAdmin)    #ADMIN에 등록한 모델. 두 번하면 오류
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    pass
