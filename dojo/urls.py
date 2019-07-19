@@ -1,6 +1,7 @@
 from django.urls import re_path, path
 
 from dojo import views
+from dojo import views_cbv
 
 urlpatterns=[
     re_path(r'^sum/(?P<numbers>[\d/]+\d+)/$', views.mysum),
@@ -8,5 +9,11 @@ urlpatterns=[
     path('list1/', views.post_list1),
     path('list2/', views.post_list2),
     path('list3/', views.post_list3),
-    path('excel/', views.excel_download)
+    path('excel/', views.excel_download),
+
+    path('cbv/list1/', views_cbv.post_list1),
+    path('cbv/list2/', views_cbv.post_list2),
+    path('cbv/list3/', views.post_list3),
+    path('cbv/excel/', views.excel_download),
 ]
+
