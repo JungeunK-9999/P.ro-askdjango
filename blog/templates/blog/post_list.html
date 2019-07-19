@@ -13,14 +13,15 @@
 
 <form action="" method="get">
     <input type="text" name="q" value="{{ q }}"/>
-    <input type="submit" value="검색" />
+    <input type="submit" value="검색"/>
 </form>
 
 <ul>??
     {% for post in post_list %}
         <li>
-            {{ post.id }}
-            {{ post.title }}
+            <a href="/blog/{{ post.id }}/">
+                {{ post.id }}
+                {{ post.title }}</a>
         </li>
     {% endfor %}
 </ul>

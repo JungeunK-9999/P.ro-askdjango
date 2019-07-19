@@ -1,9 +1,11 @@
-
-from django.urls import path
+from django.urls import path, re_path
 from . import views
-app_name='blog'
-urlpatterns=[
+
+app_name = 'blog'
+urlpatterns = [
     path('', views.post_list, name='blog'),
+    # path('blog/<int:id>', views.post_detail),
+    re_path(r'^(?P<id>\d+)/$', views.post_detail),
 ]
 
 """
