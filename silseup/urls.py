@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('dojo/', include('dojo.urls')),  #re_path(r'^dojo/', include('dojo.urls.py')),
+    path('accounts/', include('accounts.urls')),
 
 
 ]

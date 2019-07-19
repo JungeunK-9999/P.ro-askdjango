@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'blog',
     'dojo',
+    'accounts',
     'django_extensions',
     'debug_toolbar',
 ]
