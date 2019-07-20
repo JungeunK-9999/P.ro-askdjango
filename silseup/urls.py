@@ -22,7 +22,7 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('dojo/', include('dojo.urls')),  #re_path(r'^dojo/', include('dojo.urls.py')),
     path('accounts/', include('accounts.urls')),
-
+    path('shop/', include('shop.urls')),
 
 ]
 if settings.DEBUG:
