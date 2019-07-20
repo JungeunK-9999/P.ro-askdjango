@@ -1,6 +1,7 @@
 # blog-models
 
 import re
+from django.conf import settings
 from django.db import models
 from django.forms import ValidationError
 
@@ -21,7 +22,8 @@ class Post(models.Model):
         ('p', 'Published'),
         ('w', 'Withdrawn'),
     )
-    author = models.CharField(max_length=20)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    # author = models.CharField(max_length=20)
     title = models.CharField(max_length=100, verbose_name='제목',
                              help_text='포스팅 제목을 입력하세요.')
     # section = models.CharField(max_length=100,
