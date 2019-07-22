@@ -28,7 +28,7 @@ urlpatterns = [
     # path('', root),
     # path('', lambda r: redirect('blog:post_list')),
     path('', RedirectView.as_view(pattern_name='blog:post_list')),
-    
+
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('blog/', include('blog.urls', namespace='blog')),

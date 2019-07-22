@@ -7,6 +7,8 @@ from django.forms import ValidationError
 
 
 # from django.utils import timezone
+from django.urls import reverse
+
 
 def lnglat_validator(value):
     if not re.match(r'^([+-]?\d+\.?\d*),([+-]?\d+\.?\d*)$', value):
@@ -46,6 +48,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', args=[self.id])
 
 class Comment (models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
