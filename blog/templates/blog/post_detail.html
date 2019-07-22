@@ -15,6 +15,12 @@
     {{ comment.author }}
     {{ comment.updated }}
 {% endfor %}
+
+
+    <br/>
+    <br/>
+    <hr/>
+    <a href="{% url "blog:post_list" %}">글 목록</a>
 {% endblock %}
 
 

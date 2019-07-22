@@ -11,9 +11,16 @@
     <ul>??
         {% for post in post_list %}
             <li>
-                <a href="/blog/{{ post.id }}/">
+
+
+                <a href="{% url "blog:post_detail" post.id %}">
                     {{ post.id }}
-                    {{ post.title }}</a>
+                    {{ post.title }}
+                </a>
+{##}
+{#                <a href="/blog/{{ post.id }}/">#}
+{#                    {{ post.id }}#}
+{#                    {{ post.title }}</a>#}
             </li>
         {% endfor %}
     </ul>
@@ -30,45 +37,45 @@
 {% endblock %}
 
 
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,
-    minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-
-    <title>Title</title>
-</head>
-<body>
-<h1>AskDjango</h1>
-<p>안녕하세요</p>
-
-<form action="" method="get">
-    <input type="text" name="q" value="{{ q }}"/>
-    <input type="submit" value="검색"/>
-</form>
-
-<ul>??
-    {% for post in post_list %}
-        <li>
-            <a href="/blog/{{ post.id }}/">
-                {{ post.id }}
-                {{ post.title }}</a>
-        </li>
-    {% endfor %}
-</ul>
-
-<ul>
-    <li>
-        dkdkkd
-    </li>
-    <li>
-        야이야이야
-    </li>
-</ul>
-</body>
-</html>
+{##}
+{##}
+{##}
+{##}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width,initial-scale=1.0,#}
+{#    minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>#}
+{##}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{#<h1>AskDjango</h1>#}
+{#<p>안녕하세요</p>#}
+{##}
+{#<form action="" method="get">#}
+{#    <input type="text" name="q" value="{{ q }}"/>#}
+{#    <input type="submit" value="검색"/>#}
+{#</form>#}
+{##}
+{#<ul>??#}
+{#    {% for post in post_list %}#}
+{#        <li>#}
+{#            <a href="/blog/{{ post.id }}/">#}
+{#                {{ post.id }}#}
+{#                {{ post.title }}</a>#}
+{#        </li>#}
+{#    {% endfor %}#}
+{#</ul>#}
+{##}
+{#<ul>#}
+{#    <li>#}
+{#        dkdkkd#}
+{#    </li>#}
+{#    <li>#}
+{#        야이야이야#}
+{#    </li>#}
+{#</ul>#}
+{#</body>#}
+{#</html>#}

@@ -3,9 +3,9 @@ from . import views
 
 app_name = 'blog'
 urlpatterns = [
-    path('', views.post_list, name='blog'),
+    path('', views.post_list, name='post_list'),
     # path('blog/<int:id>', views.post_detail),
-    re_path(r'^(?P<id>\d+)/$', views.post_detail),
+    re_path(r'^detail/(?P<id>\d+)/$', views.post_detail, name='post_detail'),
 ]
 
 """
