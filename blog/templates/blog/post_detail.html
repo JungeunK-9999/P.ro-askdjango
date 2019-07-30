@@ -1,39 +1,40 @@
 {% extends "blog/layout.html" %}
 
 {% block title %}
-{{ post.title }}
+    {{ post.title }}
 {% endblock %}
 
 {% block content %}
-<h1>{{ post.title }}</h1>
-{{ post.content }}
-<hr/>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
 
-<h3>Comments</h3>
-{% for comment in post.comment_set.all %}
-    {{ comment.message }}
-    {{ comment.author }}
-    {{ comment.updated }}
-{% endfor %}
+                <h1>{{ post.title }}</h1>
+                {{ post.content }}
+                <hr/>
+
+                {% lorem 2 p random %}
+                <br/>
+                {% now "jS F Y H:i" %}
 
 
-    <br/>
-    <br/>
-    <hr/>
-    <a href="{% url "blog:post_list" %}">글 목록</a>
+{#                {{  |random }}#}
+
+                <hr/>
+                <h3>Comments</h3>
+                {% for comment in post.comment_set.all %}
+                    {{ comment.message }}
+                    {{ comment.author }}
+                    {{ comment.updated }}
+                {% endfor %}
+
+
+                <br/>
+                <br/>
+                <hr/>
+                <a href="{% url "blog:post_list" %}" class="btn btn-primary">글 목록</a>
+
+            </div>
+        </div>
+    </div>
 {% endblock %}
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title{{ post.title }}</title>
-</head>
-<body>
-
-</body>
-</html>
