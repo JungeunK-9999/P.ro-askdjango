@@ -13,26 +13,9 @@ def post_new(request):
         # request.FILES
         form=PostForm(request.POST, request.FILES)
         if form.is_valid():
-            # # 방법1
-            # print(form.cleaned_data)
-            # post=Post()
-            # post.title=form.cleaned_data['title']
-            # post.content=form.cleaned_data['content']
-            # post.save()
-            #
-            # # 방법2
-            # post=Post(title=form.cleaned_data['title'],
-            #           content=form.cleaned_data['content'])
-            # post.save()
-            #
-            # # 방법3
-            # post=Post.objects.create(title=form.cleaned_data['title'],
-            #                          content=form.cleaned_data['content'])
-            # post.save()
-
-            # 방법4
-            post=Post.objects.create(**form.cleaned_data)
-
+            post=form.save(commit=False)
+            post.ip=request.META['REMOTE_ADDR']
+            post.save()
             return redirect('/dojo/list1/')
     else:
         form=PostForm()
