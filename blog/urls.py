@@ -10,8 +10,8 @@ urlpatterns = [
     # path('blog/<int:id>', views.post_detail),
     re_path(r'^detail/(?P<id>\d+)/$', views.post_detail, name='post_detail'),
 
-    path('new/', views.post_new),
-    path('edit/<int:id>', views.post_edit),
+    path('new/', views.post_new, name='post_new'),
+    path('edit/<int:id>', views.post_edit, name='post_edit'),
 
     path('cbv/new', views_cbv.post_new),
 ]

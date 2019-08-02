@@ -18,7 +18,7 @@
                 {% now "jS F Y H:i" %}
 
 
-{#                {{  |random }}#}
+                {#                {{  |random }}#}
 
                 <hr/>
                 <h3>Comments</h3>
@@ -32,6 +32,7 @@
                 <br/>
                 <br/>
                 <hr/>
+                <a href="{% url "blog:post_edit" post.id %}" class="btn btn-primary">글 수정</a>
                 <a href="{% url "blog:post_list" %}" class="btn btn-primary">글 목록</a>
 
             </div>
