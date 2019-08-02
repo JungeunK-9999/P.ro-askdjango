@@ -1,7 +1,42 @@
 import os
 from django.conf import settings
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
+
+from dojo.forms import PostForm
+from dojo.models import Post
+
+
+def post_new(request):
+    if request.method =='POST':
+        # request.POST
+        # request.FILES
+        form=PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            # # 방법1
+            # print(form.cleaned_data)
+            # post=Post()
+            # post.title=form.cleaned_data['title']
+            # post.content=form.cleaned_data['content']
+            # post.save()
+            #
+            # # 방법2
+            # post=Post(title=form.cleaned_data['title'],
+            #           content=form.cleaned_data['content'])
+            # post.save()
+            #
+            # # 방법3
+            # post=Post.objects.create(title=form.cleaned_data['title'],
+            #                          content=form.cleaned_data['content'])
+            # post.save()
+
+            # 방법4
+            post=Post.objects.create(**form.cleaned_data)
+
+            return redirect('/dojo/list1/')
+    else:
+        form=PostForm()
+    return render(request, 'dojo/post_form.html', {'forms':form})
 
 
 # Create your views here.

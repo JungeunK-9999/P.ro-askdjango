@@ -4,6 +4,8 @@ from dojo import views
 from dojo import views_cbv
 
 urlpatterns=[
+    path('new/', views.post_new),
+
     re_path(r'^sum/(?P<numbers>[\d/]+\d+)/$', views.mysum),
     re_path(r'^hello/(?P<name>[ㄱ-힣]+)/(?P<age>\d+)/$', views.hello),
     path('list1/', views.post_list1),
